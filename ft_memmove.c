@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: logkoege <logkoege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 17:05:02 by logkoege          #+#    #+#             */
-/*   Updated: 2024/04/25 19:26:32 by logkoege         ###   ########.fr       */
+/*   Created: 2024/04/25 19:09:27 by logkoege          #+#    #+#             */
+/*   Updated: 2024/04/25 19:18:01 by logkoege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+void
+	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*s01;
-	unsigned char	*s02;
+	int	i;
 
-	s01 = (unsigned char *)s1;
-	s02 = (unsigned char *)s2;
-	while (n > 0)
+	if (!dst || !src)
+		return (0);
+	if (dst > src)
 	{
-		if (*s01 != *s02)
-			return (*s01 - *s02);
-		s01++;
-		s02++;
-		n--;
+		i = (int)len - 1;
+		while (i >= 0)
+		{
+			((char *)dst)[i] = ((char *)src)[i];
+			i--;
+		}
 	}
-	return (0);
+	else
+	{
+		i = 0;
+		while (i < (int)len)
+		{
+			((char *)dst)[i] = ((char *)src)[i];
+			i++;
+		}
+	}
+	return (dst);
 }
