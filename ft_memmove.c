@@ -6,36 +6,36 @@
 /*   By: logkoege <logkoege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:09:27 by logkoege          #+#    #+#             */
-/*   Updated: 2024/04/25 19:18:01 by logkoege         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:17:15 by logkoege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void
-	*ft_memmove(void *dst, const void *src, size_t len)
+	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int	i;
+	size_t	i;
 
-	if (!dst || !src)
+	if (dest == '\0' || src == '\0')
 		return (0);
-	if (dst > src)
+	if (dest > src)
 	{
-		i = (int)len - 1;
+		i = n - 1;
 		while (i >= 0)
 		{
-			((char *)dst)[i] = ((char *)src)[i];
+			((char *)dest)[i] = ((char *)src)[i];
 			i--;
 		}
 	}
 	else
 	{
 		i = 0;
-		while (i < (int)len)
+		while (i < n)
 		{
-			((char *)dst)[i] = ((char *)src)[i];
+			((char *)dest)[i] = ((char *)src)[i];
 			i++;
 		}
 	}
-	return (dst);
+	return (dest);
 }

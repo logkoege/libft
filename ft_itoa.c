@@ -7,9 +7,8 @@ char	*ft_itoa(int n)
 	size_t	size;
 
 	nbr = n;
-	if (n >= 0)
-		size = 0;
-	else 
+	size = 0;
+	if (nbr < 0)
     {
 		size = 1;
 		nbr = -nbr;
