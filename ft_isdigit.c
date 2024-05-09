@@ -6,15 +6,15 @@
 /*   By: logkoege <logkoege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 12:33:58 by logkoege          #+#    #+#             */
-/*   Updated: 2024/04/24 12:34:01 by logkoege         ###   ########.fr       */
+/*   Updated: 2024/05/02 16:19:56 by logkoege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isdigit(int c)
+int	ft_isdigit(int c)
 {
-	if (c >= 0 && c <= 9)
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }

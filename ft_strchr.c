@@ -6,7 +6,7 @@
 /*   By: logkoege <logkoege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 12:36:13 by logkoege          #+#    #+#             */
-/*   Updated: 2024/04/24 12:36:31 by logkoege         ###   ########.fr       */
+/*   Updated: 2024/04/29 22:46:14 by logkoege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	while ((char)c != *s)
 	{
 		if (!*s)
-			return (0);
+			return (NULL);
 		s++;
 	}
 	return ((char *)s);

@@ -6,20 +6,22 @@
 /*   By: logkoege <logkoege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 12:35:24 by logkoege          #+#    #+#             */
-/*   Updated: 2024/04/24 12:35:26 by logkoege         ###   ########.fr       */
+/*   Updated: 2024/05/07 07:10:44 by logkoege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(const char *s, int fd)
+void	ft_putstr_fd(const char *s, int fd)
 {
-    size_t  i;
+	size_t	i;
 
-    i = 0;
-    while (s[i])
-    {
-        write(fd, &s[i], 1);
-        i++;
-    }
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
 }

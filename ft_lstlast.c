@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: logkoege <logkoege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 23:03:52 by logkoege          #+#    #+#             */
-/*   Updated: 2024/05/02 20:10:31 by logkoege         ###   ########.fr       */
+/*   Created: 2024/05/07 00:47:58 by logkoege          #+#    #+#             */
+/*   Updated: 2024/05/07 02:20:56 by logkoege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	*s2;
-	size_t	i;
-
-	i = 0;
-	s2 = malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (!s2)
-		return (NULL);
-	while (s1[i])
+	if (lst == NULL)
+		return (0);
+	while (lst)
 	{
-		s2[i] = s1[i];
-		i++;
+		if (lst->next == NULL)
+			return (lst);
+		lst = lst->next;
 	}
-	s2[i] = '\0';
-	return (s2);
+	return (lst);
 }

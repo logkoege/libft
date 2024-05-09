@@ -6,15 +6,15 @@
 /*   By: logkoege <logkoege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 12:34:27 by logkoege          #+#    #+#             */
-/*   Updated: 2024/04/24 12:34:31 by logkoege         ###   ########.fr       */
+/*   Updated: 2024/05/02 16:22:28 by logkoege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 & c <= 122) || (c >= 0 && c <= 9))
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
-	return(0);
+	return (0);
 }

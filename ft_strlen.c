@@ -6,18 +6,18 @@
 /*   By: logkoege <logkoege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:16:21 by logkoege          #+#    #+#             */
-/*   Updated: 2024/04/24 11:17:41 by logkoege         ###   ########.fr       */
+/*   Updated: 2024/05/06 23:14:54 by logkoege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])
 		i++;
-	return ((size_t)i);
+	return (i);
 }

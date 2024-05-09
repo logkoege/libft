@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: logkoege <logkoege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 23:03:52 by logkoege          #+#    #+#             */
-/*   Updated: 2024/05/02 20:10:31 by logkoege         ###   ########.fr       */
+/*   Created: 2024/05/06 20:12:25 by logkoege          #+#    #+#             */
+/*   Updated: 2024/05/07 07:13:00 by logkoege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	char	*s2;
-	size_t	i;
-
-	i = 0;
-	s2 = malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (!s2)
-		return (NULL);
-	while (s1[i])
-	{
-		s2[i] = s1[i];
-		i++;
-	}
-	s2[i] = '\0';
-	return (s2);
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }
