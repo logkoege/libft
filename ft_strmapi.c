@@ -6,7 +6,7 @@
 /*   By: logkoege <logkoege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 12:51:49 by logkoege          #+#    #+#             */
-/*   Updated: 2024/05/04 19:11:17 by logkoege         ###   ########.fr       */
+/*   Updated: 2024/05/09 19:29:19 by logkoege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*map;
-	unsigned int	i;
+	size_t	i;
+	char	*new;
 
-	i = 0;
-	map = ft_strdup(s);
-	if (!map || !s || !f)
+	if (!s || !f)
 		return (NULL);
-	while (map[i])
+	new = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!new)
+		return (NULL);
+	i = 0;
+	while (s[i])
 	{
-		map[i] = f(i, map[i]);
+		new[i] = (*f)(i, s[i]);
 		i++;
 	}
-	return (map);
+	new[i] = '\0';
+	return (new);
 }
+

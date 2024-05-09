@@ -74,7 +74,7 @@ bonus: $(OBJS) $(OBJSB)
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJSB)
 
 fclean: clean
 	$(RM) $(NAME)
